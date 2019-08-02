@@ -15,7 +15,7 @@
                         <input class="form-control" type="text" id="name" name="name" placeholder="Nombre" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" id="salary" name="salary" placeholder="Salario" autocomplete="off">
+                        <input class="form-control" type="text" id="age" name="age" placeholder="Edad" autocomplete="off">
                     </div>
                     <input class="btn btn-primary" type="submit" value="Guardar">
                 </form>

@@ -9,7 +9,7 @@
 class db
 {
     public static function conexion(){
-        $conexion = new mysqli('localhost', 'root', 'avior.2018', 'mvc', '3306');
+        $conexion = new mysqli('localhost', 'root', '19651249', 'mvc', '3306');
         $conexion->query("SET NAMES 'utf8'");
         return $conexion;
     }

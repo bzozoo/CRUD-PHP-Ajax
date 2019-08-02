@@ -14,7 +14,7 @@ class personasModel
     }
 
     public function getPersonas(){
-        $sql = $this->db->query("SELECT * FROM employee");
+        $sql = $this->db->query("SELECT * FROM personas");
         while($filas = $sql->fetch_assoc()){
             $this->personas[] = $filas;
         }
@@ -22,8 +22,8 @@ class personasModel
         return $this->personas;
     }
 
-    public function getPersonasId($id_employee){
-        $sql = $this->db->query("SELECT * FROM employee WHERE id_employee='{$id_employee}'");
+    public function getPersonasId($id_persona){
+        $sql = $this->db->query("SELECT * FROM personas WHERE id_persona='{$id_persona}'");
         while($filas = $sql->fetch_assoc()){
             $this->personas[] = $filas;
         }
@@ -31,20 +31,20 @@ class personasModel
     }
 
     public function setPersonas($cedula, $name, $salary){
-        $sql = "INSERT INTO employee(id_employee, cedula, name, salary)VALUES(
-                NULL, '{$cedula}', '{$name}', '{$salary}')";
+        $sql = "INSERT INTO personas(id_persona, cedula, name, age)VALUES(
+                NULL, '{$cedula}', '{$name}', '{$age}')";
         return $this->db->query($sql);
     }
 
-    public function delPersonas($id_employee){
-        $sql = "DELETE FROM employee WHERE id_employee={$id_employee}";
+    public function delPersonas($id_persona){
+        $sql = "DELETE FROM personas WHERE id_persona={$id_persona}";
         return $this->db->query($sql);
     }
 
-    public function editPersonas($id_employee ,$cedula, $name, $salary, $created){
-        $sql = "UPDATE employee SET cedula='{$cedula}', name='{$name}', 
-                  salary='{$salary}', created='{$created}'
-                  WHERE id_employee='{$id_employee}'";
+    public function editPersonas($id_persona ,$cedula, $name, $age, $created){
+        $sql = "UPDATE personas SET cedula='{$cedula}', name='{$name}', 
+                  age='{$age}', created='{$created}'
+                  WHERE id_persona='{$id_persona}'";
         return $this->db->query($sql);
     }
 }

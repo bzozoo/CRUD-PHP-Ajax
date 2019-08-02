@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <form id="formedit">
                     <div class="form-group">
-                        <input class="form-control" type="text" disabled id="id_employee" placeholder="ID">
+                        <input class="form-control" type="text" disabled id="id_persona" placeholder="ID">
                     </div>
                     <div class="form-group">
                         <input class="form-control" type="text" id="new_cedula" placeholder="Cedula" autocomplete="off">
@@ -18,7 +18,7 @@
                         <input class="form-control" type="text" id="new_name" placeholder="Nombre" autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" id="new_salary" placeholder="Salario" autocomplete="off">
+                        <input class="form-control" type="text" id="new_age" placeholder="Edad" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <input class="form-control" type="text" id="new_created" placeholder="Created" autocomplete="off">

@@ -28,11 +28,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `employee`
 --
 
-CREATE TABLE `employee` (
-  `id_employee` int(11) NOT NULL,
+CREATE TABLE `personas` (
+  `id_persona` int(11) NOT NULL,
   `cedula` int(11) NOT NULL,
   `name` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
-  `salary` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
+  `age` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -40,9 +40,9 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`id_employee`, `cedula`, `name`, `salary`, `created`) VALUES
-(1, 19651249, 'Luis Eduardo', '$7777', '2018-01-16 18:45:48'),
-(2, 20993345, 'Ramon Diaz', '$20000', '2018-01-16 18:45:48');
+INSERT INTO `personas` (`id_persona`, `cedula`, `name`, `age`, `created`) VALUES
+(1, 19651249, 'Luis Eduardo', '18', '2018-01-16 18:45:48'),
+(2, 20993345, 'Ramon Diaz', '50', '2018-01-16 18:45:48');
 
 --
 -- Indexes for dumped tables
@@ -51,8 +51,8 @@ INSERT INTO `employee` (`id_employee`, `cedula`, `name`, `salary`, `created`) VA
 --
 -- Indexes for table `employee`
 --
-ALTER TABLE `employee`
-  ADD PRIMARY KEY (`id_employee`);
+ALTER TABLE `personas`
+  ADD PRIMARY KEY (`id_persona`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -61,8 +61,8 @@ ALTER TABLE `employee`
 --
 -- AUTO_INCREMENT for table `employee`
 --
-ALTER TABLE `employee`
-  MODIFY `id_employee` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+ALTER TABLE `personas`
+  MODIFY `id_persona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -36,16 +36,16 @@ document.getElementById('formadd').addEventListener('submit', function (e) {
     //Campos
     var cedula = document.getElementById('cedula').value;
     var name = document.getElementById('name').value;
-    var salary = document.getElementById('salary').value;
+    var age = document.getElementById('age').value;
 
-    setPerson(cedula, name, salary);
+    setPerson(cedula, name, age);
 });
 
-function setPerson(cedula, name, salary) {
+function setPerson(cedula, name, age) {
     var Form = new FormData();
     Form.append('cedula', cedula);
     Form.append('name', name);
-    Form.append('salary', salary);
+    Form.append('age', age);
     Form.append('new', 'new');
 
     var url = 'controllers/person/person_ctrl.php';
@@ -102,17 +102,17 @@ function modalEdit(index) {
     $('#editPerson').modal('toggle');
 
     //Nodos tabla
-    var id_employee = index.parentNode.parentNode.cells[0].textContent;
+    var id_persona = index.parentNode.parentNode.cells[0].textContent;
     var new_cedula = index.parentNode.parentNode.cells[1].textContent;
     var new_name = index.parentNode.parentNode.cells[2].textContent;
-    var new_salary = index.parentNode.parentNode.cells[3].textContent;
+    var new_age = index.parentNode.parentNode.cells[3].textContent;
     var new_created = index.parentNode.parentNode.cells[4].textContent;
 
     //Pego en el formulario
-    document.getElementById('id_employee').value = id_employee;
+    document.getElementById('id_persona').value = id_persona;
     document.getElementById('new_cedula').value = new_cedula;
     document.getElementById('new_name').value = new_name;
-    document.getElementById('new_salary').value = new_salary;
+    document.getElementById('new_age').value = new_age;
     document.getElementById('new_created').value = new_created;
 }
 
@@ -121,23 +121,23 @@ document.getElementById('formedit').addEventListener('submit', function (e) {
 //document.forms[1].addEventListener('submit', function (e) {
     e.preventDefault();
     //Campos
-    var id_employee = document.getElementById('id_employee').value;
+    var id_persona = document.getElementById('id_persona').value;
     var new_cedula = document.getElementById('new_cedula').value;
     var new_name = document.getElementById('new_name').value;
-    var new_salary = document.getElementById('new_salary').value;
+    var new_age = document.getElementById('new_age').value;
     var new_created = document.getElementById('new_created').value;
 
-    editPerson(id_employee, new_cedula, new_name, new_salary, new_created);
+    editPerson(id_persona, new_cedula, new_name, new_age, new_created);
 });
 
 //3 => Se envia la informacion
-function editPerson(id_employee, cedula, name, salary, created){
+function editPerson(id_persona, cedula, name, age, created){
     //DataForm
     var FormEdit = new FormData();
-    FormEdit.append('id_employee', id_employee);
+    FormEdit.append('id_persona', id_persona);
     FormEdit.append('new_cedula', cedula);
     FormEdit.append('new_name', name);
-    FormEdit.append('new_salary', salary);
+    FormEdit.append('new_age', age);
     FormEdit.append('new_created', created);
     FormEdit.append('edit', 'edit');
 
